@@ -9,7 +9,7 @@
   * Clone this repository to your local machine by clicking the green "Clone or download" button from my GitHub repository
   * Copy the path to clone with HTTPS
   * From the CLI, type ``` git clone {paste path here} ``` and hit ```enter``` from the folder in which you'd like to save this project
-  * ```cd``` into the ```royal-circuit/``` folder and type ```npm install``` to install all dependencies
+  * ```cd``` into the ```geocode-app/``` folder and type ```npm install``` to install all dependencies
   * Once that installation is complete, type ```npm start``` to boot up the application from ```http://localhost:3000/```
   * You MUST download the following Google Chrome extension/plugin before entering an address, or the query will not run:
     * https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
