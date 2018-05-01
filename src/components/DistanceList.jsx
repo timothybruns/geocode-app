@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DistanceList = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <div className='distanceList'>
             <h4>{props.orgAddress.formatted_address} is {props.distance} miles away from {props.destAddress.formatted_address}</h4>

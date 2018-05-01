@@ -1,10 +1,11 @@
 .App {
   text-align: center;
   font-family: helvetica;
-  background-color: #3b5998;
-  color: white;
+  background-color: #0266C8;
+  color: #ffffff;
   padding: 50px;
-  margin: 80px;
+  margin: 0 auto;
+  font-size: 1.15em;
 }
 
 .App-header {
@@ -19,9 +20,14 @@ input, label {
 }
 
 .addressSearch {
-  margin: 30px auto;
+  margin: 0 auto;
   width: 450px;
-  background-color: #A9A9A9;
+  padding: 20px;
+  background-color: #d2d2d2;
+}
+
+.addressSearch:hover{
+  color: black;
 }
 
 #street {
