@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import DistanceList from './DistanceList'
+import DistanceList from './DistanceList';
+import { Button } from 'react-bootstrap';
 
 var haversine = require('haversine-distance');
 
@@ -34,6 +35,8 @@ class AddressForm extends Component {
       this.getOriginAddress();
       this.getDistance();
       this.getDrivingDistance();
+      // this.validateOrgZip();
+      // this.validateDestZip();
       this.setState({
         orgStreet: '',
         orgCity: '',
@@ -45,6 +48,20 @@ class AddressForm extends Component {
         destZip: '',
       })
     }
+
+    // validateOrgZip() {
+    //   const length = this.state.orgZip.length;
+    //   if (length > 5) alert ('invalid zip code');
+    //   else if (length < 5) alert ('Invalid zip code!');
+    //   return null;
+    // }
+
+    // validateDestZip() {
+    //   const length = this.state.orgZip.length;
+    //   if (length > 5) alert ('invalid zip code');
+    //   else if (length < 5) alert ('Invalid zip code!');
+    //   return null;
+    // }
 
     getOriginAddress() {
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.orgStreet}+${this.state.orgCity}+${this.state.orgState}+${this.state.orgZip}&key=AIzaSyAxZ6FXNZnH1DbkPI2UIuMvb_yEb8CiuHE`)
@@ -99,6 +116,7 @@ class AddressForm extends Component {
         <br/>
           <form>
             ORIGIN
+            <br/>
             <label>
               <input type="street" className="form-control" id="orgStreet" placeholder="Street" value={this.state.orgStreet} onChange={this.handleChange} />
               <input type="city" className="form-control" id="orgCity" placeholder="City" value={this.state.orgCity} onChange={this.handleChange} />
@@ -109,13 +127,15 @@ class AddressForm extends Component {
           <hr/>
           <form onSubmit={this.handleSubmit}>
           DESTINATION
+          <br/>
             <label>
               <input type="street" className="form-control" id="destStreet" placeholder="Street" value={this.state.destStreet} onChange={this.handleChange} />
               <input type="city" className="form-control" id="destCity" placeholder="City" value={this.state.destCity} onChange={this.handleChange} />
               <input type="state" className="form-control" id="destState" placeholder="State" value={this.state.destState} onChange={this.handleChange} />
               <input type="zip" pattern="[0-9]{5}" className="form-control" id="destZip" placeholder="Zip" value={this.state.destZip} onChange={this.handleChange} />
             </label>
-            <input type="submit" className="form-control" value="Submit" />
+            <br/>
+            <Button type='submit' value='Submit'>Submit</Button>
             <br/>
             <br/>
           </form>

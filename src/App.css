@@ -11,7 +11,7 @@
 .App-header {
   background-color: #222;
   height: 150px;
-  padding: 20px;
+  padding: 15px;
   color: white;
 }
 
@@ -21,17 +21,17 @@ input, label {
 
 .addressSearch {
   margin: 0 auto;
-  width: 450px;
-  padding: 20px;
+  width: 850px;
+  padding: 10px;
   background-color: #d2d2d2;
 }
 
 .addressSearch:hover{
-  color: black;
+  color: #0266C8;
 }
 
 #street {
-  width: 70%;
+  width: 10%;
 }
 
 #city {
