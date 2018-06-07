@@ -17,11 +17,12 @@
 
 input, label {
   margin: 5px 5px;
+  width: 250px;
 }
 
 .addressSearch {
   margin: 0 auto;
-  width: 850px;
+  width: 700px;
   padding: 10px;
   background-color: #d2d2d2;
 }

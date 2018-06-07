@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DistanceList from './DistanceList';
 import { Button } from 'react-bootstrap';
+// import Form, { Input, Fieldset } from 'react-bootstrap-form';
 
 var haversine = require('haversine-distance');
 
@@ -35,8 +36,6 @@ class AddressForm extends Component {
       this.getOriginAddress();
       this.getDistance();
       this.getDrivingDistance();
-      // this.validateOrgZip();
-      // this.validateDestZip();
       this.setState({
         orgStreet: '',
         orgCity: '',
@@ -49,19 +48,15 @@ class AddressForm extends Component {
       })
     }
 
-    // validateOrgZip() {
-    //   const length = this.state.orgZip.length;
-    //   if (length > 5) alert ('invalid zip code');
-    //   else if (length < 5) alert ('Invalid zip code!');
-    //   return null;
-    // }
-
-    // validateDestZip() {
-    //   const length = this.state.orgZip.length;
-    //   if (length > 5) alert ('invalid zip code');
-    //   else if (length < 5) alert ('Invalid zip code!');
-    //   return null;
-    // }
+    validateOrgZip() {
+      const zipLength = this.state.orgZip.length;
+      if (zipLength > 5) 
+        alert ('Invalid zip code!');
+      else if (zipLength < 5) 
+        alert ('Invalid zip code!');
+      else 
+        return null;
+    }
 
     getOriginAddress() {
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.state.orgStreet}+${this.state.orgCity}+${this.state.orgState}+${this.state.orgZip}&key=AIzaSyAxZ6FXNZnH1DbkPI2UIuMvb_yEb8CiuHE`)
@@ -135,7 +130,7 @@ class AddressForm extends Component {
               <input type="zip" pattern="[0-9]{5}" className="form-control" id="destZip" placeholder="Zip" value={this.state.destZip} onChange={this.handleChange} />
             </label>
             <br/>
-            <Button type='submit' value='Submit'>Submit</Button>
+            <Button bsStyle="success">Submit</Button>
             <br/>
             <br/>
           </form>
